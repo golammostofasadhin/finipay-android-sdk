@@ -1,0 +1,4 @@
+-keep class com.finipay.sdk.** { *; }
+-keepclassmembers class com.finipay.sdk.api.models.** { *; }
+-keep class retrofit2.** { *; }
+-keepclassmembers,allowobfuscation class * { @com.google.gson.annotations.SerializedName <fields>; }
