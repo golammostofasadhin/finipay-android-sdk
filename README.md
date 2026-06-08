@@ -12,19 +12,23 @@
 
 ## Integration
 
-### Step 1: SDK মডিউল অ্যাড করুন
+### Step 1: JitPack থেকে SDK অ্যাড করুন
 
-`finipaysdk` ফোল্ডারটি আপনার প্রোজেক্টে কপি করুন, তারপর `settings.gradle.kts` এ যুক্ত করুন:
+**root** `build.gradle.kts` বা `settings.gradle.kts` এ JitPack রিপোজিটরি যোগ করুন:
 
 ```kotlin
-include(":finipaysdk")
+dependencyResolutionManagement {
+    repositories {
+        maven { url = uri("https://jitpack.io") }
+    }
+}
 ```
 
-আপনার অ্যাপের `build.gradle.kts` এ ডিপেন্ডেন্সি অ্যাড করুন:
+**app** `build.gradle.kts` এ ডিপেন্ডেন্সি অ্যাড করুন:
 
 ```kotlin
 dependencies {
-    implementation(project(":finipaysdk"))
+    implementation("com.github.golammostofasadhin:finipay-android-sdk:v1.0.0")
 }
 ```
 
